@@ -20,14 +20,14 @@ class IntroPage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 48),
-            Center(
+            const Center(
               child: Text(
                 "Just Do It",
                 style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
               ),
             ),
             const SizedBox(height: 24),
-            Text(
+            const Text(
               "Brand new Sneakers and Boots made with premium quality",
               style: TextStyle(fontSize: 16, color: Colors.grey),
               textAlign: TextAlign.center,
@@ -35,25 +35,29 @@ class IntroPage extends StatelessWidget {
             const SizedBox(height: 48),
             InkWell(
               child: GestureDetector(
-                onTap: () => Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => SneakersPage())),
+                onTap: () => Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => const SneakersPage()),
+                ),
                 child: Container(
-                  padding: EdgeInsets.all(25),
-                  child: Center(
+                  padding: const EdgeInsets.all(25),
+                  decoration: BoxDecoration(
+                    color: Colors.black,
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: const Center(
                     child: Text(
                       'Shop Now',
                       style: TextStyle(
-                          fontSize: 16,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold),
+                        fontSize: 16,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
-                  decoration: BoxDecoration(
-                      color: Colors.black,
-                      borderRadius: BorderRadius.circular(12)),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),

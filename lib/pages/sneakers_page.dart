@@ -36,9 +36,12 @@ class _SneakersPageState extends State<SneakersPage> {
               onPressed: () {
                 Scaffold.of(context).openDrawer();
               },
-              icon: const Icon(
-                Icons.menu,
-                color: Colors.black,
+              icon: const Padding(
+                padding: EdgeInsets.only(left: 12),
+                child: Icon(
+                  Icons.menu,
+                  color: Colors.black,
+                ),
               ));
         }),
       ),
@@ -65,13 +68,15 @@ class _SneakersPageState extends State<SneakersPage> {
                     color: Colors.grey[800],
                   ),
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(left: 25),
+                Padding(
+                  padding: const EdgeInsets.only(left: 25),
                   child: ListTile(
-                    title: Text("H O M E"),
-                    titleTextStyle: TextStyle(
+                    title: const Text("H O M E"),
+                    onTap: () =>
+                        Navigator.popAndPushNamed(context, '/sneakers'),
+                    titleTextStyle: const TextStyle(
                         color: Colors.white, fontWeight: FontWeight.w700),
-                    leading: Icon(
+                    leading: const Icon(
                       Icons.home,
                       color: Colors.white,
                     ),
@@ -91,13 +96,14 @@ class _SneakersPageState extends State<SneakersPage> {
                 ),
               ],
             ),
-            const Padding(
-              padding: EdgeInsets.only(left: 25, bottom: 25),
+            Padding(
+              padding: const EdgeInsets.only(left: 25, bottom: 25),
               child: ListTile(
-                title: Text("LOG OUT"),
-                titleTextStyle:
-                    TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
-                leading: Icon(
+                title: const Text("LOG OUT"),
+                onTap: () => Navigator.popAndPushNamed(context, '/intro'),
+                titleTextStyle: const TextStyle(
+                    color: Colors.white, fontWeight: FontWeight.w700),
+                leading: const Icon(
                   Icons.logout,
                   color: Colors.white,
                 ),
